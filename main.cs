@@ -9,10 +9,36 @@ class MainClass {
     c.titular = "victor";
     c.saldo = 100;
 
-    StreamWriter sw = new StreamWriter("dados/Conta.dat",true);
-    sw.WriteLine("{0,5},{1,-20},{2,9:F2},", 
-                  c.numero, c.titular, c.saldo);
-    sw.Close();
+    Conta d = new Conta();
+    d.numero = 2;
+    d.titular = "beth";
+    d.saldo = 200;
+
+    c.Criar();
+    d.Criar();
+
+    if ( c.Recuperar( 1 ) )
+      Console.WriteLine("{0}\n{1}\n{2}",
+                        c.numero, 
+                        c.titular, 
+                        c.saldo);
+    else
+      Console.WriteLine("Conta Não Encontrada");
+
+    if ( c.Deletar() )
+      Console.WriteLine("Conta Deletada");
+    else
+      Console.WriteLine("Conta Não Encontrada");
+
+    // if( c.Saca(110.0) )
+    // {
+    //   Console.WriteLine("Saque realizado com sucesso");
+    //   c.Atualizar();
+    // }
+    // else
+    // {
+    //   Console.WriteLine("Saldo Insuficiente");
+    // }
 
   }
 }
