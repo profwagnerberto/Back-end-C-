@@ -25,20 +25,20 @@ class MainClass {
     else
       Console.WriteLine("Conta Não Encontrada");
 
-    if ( c.Deletar() )
+    if ( d.Deletar() )
       Console.WriteLine("Conta Deletada");
     else
       Console.WriteLine("Conta Não Encontrada");
 
-    // if( c.Saca(110.0) )
-    // {
-    //   Console.WriteLine("Saque realizado com sucesso");
-    //   c.Atualizar();
-    // }
-    // else
-    // {
-    //   Console.WriteLine("Saldo Insuficiente");
-    // }
+    if( c.Saca(100.0) )
+    {
+      Console.WriteLine("Saque realizado com sucesso");
+      c.Atualizar();
+    }
+    else
+    {
+      Console.WriteLine("Saldo Insuficiente");
+    }
 
   }
 }
